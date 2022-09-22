@@ -21,7 +21,7 @@ import { connect } from "react-redux";
 import 'localstorage-polyfill';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import {LinearGradient} from 'expo-linear-gradient';
-
+import FormInput4 from '../../Form/FormInput4';
 
 const CaracCliniques1 = (props) => {
     const { colors } = useTheme();
@@ -153,7 +153,7 @@ const CaracCliniques1 = (props) => {
                     {
                         fievre == true && <View style={tailwind("items-center")}>
                             <Text style={tailwind("text-red-500")}>{test == false && "La temperature doit etre entre 36 et 43 °C"}</Text>
-                            <FormInput placeholder="Si mesuré" type="decimal-pad" onChangeText={handleTemperatureChange} />
+                            <FormInput4 placeholder="Si mesuré" type="decimal-pad" min="0" max="100" onChangeText={handleTemperatureChange} />
                             <CaracCls dateD={dateD} dateF={dateF} setDateD={setDateD} setDateF={setDateF} onSubmit={() => { handleSubmitCarac("Fievre"); setFievre(!fievre) }} />
                         </View>
                     }
@@ -242,7 +242,7 @@ const CaracCliniques1 = (props) => {
                     </TouchableOpacity>
                     {
                         dia === true && <View style={tailwind("items-center")}>
-                            <FormInput placeholder="Nb selles/jour" onChangeText={handleSelle} maxLength={Number("2")} type="number-pad" />
+                            <FormInput4 placeholder="Nb selles/jour" onChangeText={handleSelle} maxLength={Number("2")} type="number-pad" min="0" max="100" />
                             <CaracCls dateD={dateD} dateF={dateF} setDateD={setDateD} setDateF={setDateF} onSubmit={() => { handleSubmitCarac("Diarrhee"); setDia(!dia) }} />
                         </View>
                     }
@@ -251,7 +251,7 @@ const CaracCliniques1 = (props) => {
                     </TouchableOpacity>
                     {
                         nau === true && <View style={tailwind("items-center")}>
-                            <FormInput placeholder="Nb episodes/jour" onChangeText={handleNbEpisodes}  maxLength={Number("2")} type="number-pad"/>
+                            <FormInput4 placeholder="Nb episodes/jour" onChangeText={handleNbEpisodes}  maxLength={Number("2")} type="number-pad" min="0" max="100"/>
                             <CaracCls dateD={dateD} dateF={dateF} setDateD={setDateD} setDateF={setDateF} onSubmit={() => { handleSubmitCarac("NauVoumi"); setNau(!nau) }} />
                         </View>
                     }

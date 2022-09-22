@@ -22,7 +22,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import FormInput from '../../Form/FormInput';
 import apiMedicalService from "../../../Actions/apiMedicalService";
 import {LinearGradient} from 'expo-linear-gradient';
-
+import FormInput4 from '../../Form/FormInput4';
 
 
 const ExamBio1 = (props) => {
@@ -225,10 +225,7 @@ const ExamBio1 = (props) => {
             label: "Ionogramme",
             color: '#51d1c5',
           },
-          {
-            label: "Autres",
-            color: '#51d1c5',
-          },
+          
 
         ]}
           //flexDirection='row'
@@ -266,12 +263,12 @@ const ExamBio1 = (props) => {
 )}
 </View>
 
-          <FormInput placeholder="GB" onChangeText={setGb} type="decimal-pad" />
-          <FormInput placeholder="Lymphocyte" onChangeText={setLym} type="decimal-pad" />
-          <FormInput placeholder="Plaquette" onChangeText={setPla} type="decimal-pad" />
-          <FormInput placeholder="Hb" onChangeText={setHb} type="decimal-pad" />
-          <FormInput placeholder="Ht" onChangeText={setHt} type="decimal-pad" />
-          <FormButton title="Enregitrer" onPress={handleSubmit} type="decimal-pad" />
+          <FormInput4 placeholder="GB" onChangeText={setGb} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Lymphocyte" onChangeText={setLym} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Plaquette" onChangeText={setPla} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Hb" onChangeText={setHb} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Ht" onChangeText={setHt} type="decimal-pad" min="0" max="100" />
+          <FormButton title="Enregitrer" onPress={handleSubmit} type="decimal-pad" min="0" max="100" />
 
         </View>
       }
@@ -301,9 +298,9 @@ const ExamBio1 = (props) => {
 )}
 </View>
 
-          <FormInput placeholder="Creat" onChangeText={setCreat} type="decimal-pad" />
-          <FormInput placeholder="Clairance de la creat" onChangeText={setClairCreat} type="decimal-pad" />
-          <FormInput placeholder="Urée" onChangeText={setUree} type="decimal-pad" />
+          <FormInput4 placeholder="Creat" onChangeText={setCreat} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Clairance de la creat" onChangeText={setClairCreat} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Urée" onChangeText={setUree} type="decimal-pad" min="0" max="100" />
           <FormButton title="Enregitrer" onPress={handleSubmit} />
         </View>
       }
@@ -333,11 +330,11 @@ const ExamBio1 = (props) => {
 )}
 </View>
 
-          <FormInput placeholder="pH" onChangeText={setPh} type="decimal-pad" />
-          <FormInput placeholder="PaO2" onChangeText={setPao2} type="decimal-pad" />
-          <FormInput placeholder="PaCO2" onChangeText={setPaco2} type="decimal-pad" />
-          <FormInput placeholder="HCO3-" onChangeText={setHco3_} type="decimal-pad" />
-          <FormInput placeholder="SaO2" onChangeText={setSao2} type="decimal-pad" />
+          <FormInput4 placeholder="pH" onChangeText={setPh} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="PaO2" onChangeText={setPao2} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="PaCO2" onChangeText={setPaco2} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="HCO3-" onChangeText={setHco3_} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="SaO2" onChangeText={setSao2} type="decimal-pad" min="0" max="100" />
           <FormButton title="Enregitrer" onPress={handleSubmit} />
 
         </View>
@@ -368,22 +365,22 @@ const ExamBio1 = (props) => {
 )}
 </View>
 
-          <FormInput placeholder="Bilirubine (T)" onChangeText={setBiliru} type="decimal-pad" />
-          <FormInput placeholder="Bilirubine (D)" onChangeText={setBiliru1} type="decimal-pad" />
-          <FormInput placeholder="ALAT" onChangeText={setAlat} type="decimal-pad" />
-          <FormInput placeholder="ASAT" onChangeText={setAsat} type="decimal-pad" />
-          <FormInput placeholder="TP" onChangeText={setTp} type="decimal-pad" />
-          <FormInput placeholder="Facteur V" onChangeText={setFacteurV} type="decimal-pad" />
-          <FormInput placeholder="Fibrinogene" onChangeText={setFibrinogene} type="decimal-pad" />
-          <FormInput placeholder="CPK-MB" onChangeText={setCpk_mb} type="decimal-pad" />
-          <FormInput placeholder="Troponine" onChangeText={setTroponine} type="decimal-pad" />
-          <FormInput placeholder="Pro BNP" onChangeText={setPro_bnp} type="decimal-pad" />
-          <FormInput placeholder="ALbuminémie" onChangeText={setAlbumi} type="decimal-pad" />
-          <FormInput placeholder="D-Dimère" onChangeText={setD_dimère} type="decimal-pad" />
-          <FormInput placeholder="LDH" onChangeText={setLdh} type="decimal-pad" />
-          <FormInput placeholder="CRP" onChangeText={setCrp} type="decimal-pad" />
-          <FormInput placeholder="Procalcitonine" onChangeText={setProcal} type="decimal-pad" />
-          <FormInput placeholder="FErritinemie" onChangeText={setFerri} type="decimal-pad" />
+          <FormInput4 placeholder="Bilirubine (T)" onChangeText={setBiliru} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Bilirubine (D)" onChangeText={setBiliru1} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="ALAT" onChangeText={setAlat} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="ASAT" onChangeText={setAsat} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="TP" onChangeText={setTp} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Facteur V" onChangeText={setFacteurV} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Fibrinogene" onChangeText={setFibrinogene} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="CPK-MB" onChangeText={setCpk_mb} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Troponine" onChangeText={setTroponine} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Pro BNP" onChangeText={setPro_bnp} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="ALbuminémie" onChangeText={setAlbumi} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="D-Dimère" onChangeText={setD_dimère} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="LDH" onChangeText={setLdh} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="CRP" onChangeText={setCrp} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Procalcitonine" onChangeText={setProcal} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="FErritinemie" onChangeText={setFerri} type="decimal-pad" min="0" max="100" />
           <FormButton title="Enregitrer" onPress={handleSubmit} />
 
 
@@ -415,10 +412,10 @@ const ExamBio1 = (props) => {
 )}
 </View>
 
-          <FormInput placeholder="Na+" onChangeText={setNak} type="decimal-pad" />
-          <FormInput placeholder="K+" onChangeText={setNak1} type="decimal-pad" />
-          <FormInput placeholder="Na+ urinaire" onChangeText={setNakUr} type="decimal-pad" />
-          <FormInput placeholder="K+ urinaire" onChangeText={setNakUr1} type="decimal-pad" />
+          <FormInput4 placeholder="Na+" onChangeText={setNak} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="K+" onChangeText={setNak1} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="Na+ urinaire" onChangeText={setNakUr} type="decimal-pad" min="0" max="100" />
+          <FormInput4 placeholder="K+ urinaire" onChangeText={setNakUr1} type="decimal-pad" min="0" max="100" />
           <FormButton title="Enregitrer" onPress={handleSubmit} />
 
         </View>

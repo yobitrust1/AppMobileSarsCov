@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://test.yobitrust.com:8443/HachCovid19Back-0.0.1-SNAPSHOT/";
+const baseUrl = "https://test.yobitrust.com:8443/BackTunisia/";
 export default {
   medicalService(url = baseUrl) {
     return {

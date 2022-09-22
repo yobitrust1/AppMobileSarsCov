@@ -11,7 +11,7 @@ import {
 import * as Animatable from 'react-native-animatable';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { useTheme } from '@react-navigation/native';
-
+import tailwind from 'tailwind-rn';
 const SplashScreen = (props) => {
     const { colors } = useTheme();
 
@@ -35,11 +35,11 @@ const SplashScreen = (props) => {
         >
             <Text style={[styles.title, {
                 color: colors.text
-            }]}>Stay connected with everyone!</Text>
-            <Text style={styles.text}>Sign in with account</Text>
+            }]}>Rester connecté!</Text>
+            <Text style={styles.text}>Connectez-vous avec un compte</Text>
             <View style={styles.button}>
-            <TouchableOpacity onPress={()=>props.navigation.navigate("Login")}>
-                    <Text style={styles.textSign}>Get Started</Text>
+            <TouchableOpacity style={tailwind('bg-teal-400 px-3 py-3 mx-3 my-3  w-32 rounded-md')} onPress={()=>props.navigation.navigate("Login")}>
+                    <Text style={styles.textSign}>Commencer</Text>
                     <MaterialIcons 
                         name="navigate-next"
                         color="#fff"

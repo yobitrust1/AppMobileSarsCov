@@ -20,6 +20,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import FormButton from '../../Form/FormButton';
 import { medicalService } from '../../../Reducers/medicalService';
 import {LinearGradient} from 'expo-linear-gradient';
+import FormInput4 from '../../Form/FormInput4';
 import { connect } from "react-redux";
 
 const Exposition1 = (props) => {
@@ -534,7 +535,7 @@ Date d'arrivée en Tunisie? </Text>
           
         )}
       </View>
-            <FormInput placeholder="Identifiant en Tunisie" type="number-pad" onChangeText={handleIdTun} />
+            <FormInput4 placeholder="Identifiant en Tunisie" type="number-pad" min="0" max="100" onChangeText={handleIdTun} />
           </View>)}
 
           <TouchableOpacity onPress={handleAutresChange}>

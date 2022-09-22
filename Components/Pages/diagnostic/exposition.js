@@ -21,7 +21,7 @@ import FormButton from '../../Form/FormButton';
 import { medicalService } from '../../../Reducers/medicalService';
 import {LinearGradient} from 'expo-linear-gradient';
 import { connect } from "react-redux";
-
+import FormInput4 from '../../Form/FormInput4';
 const Exposition1 = (props) => {
   const { colors } = useTheme();
 
@@ -268,7 +268,7 @@ const Exposition1 = (props) => {
     console.log(values)
 
     props.addExposition(props.patientList["cin"], values)
-    props.navigation.navigate("DiagnosticDetails")
+    props.navigation.navigate("PatientDetails")
   }
   return (
 <ScrollView  >
@@ -534,7 +534,7 @@ Date d'arrivée en Tunisie? </Text>
           
         )}
       </View>
-            <FormInput placeholder="Identifiant en Tunisie" type="number-pad" onChangeText={handleIdTun} />
+            <FormInput4 placeholder="Identifiant en Tunisie" type="number-pad" min="0" max="100" onChangeText={handleIdTun} />
           </View>)}
 
           <TouchableOpacity onPress={handleAutresChange}>
@@ -662,7 +662,7 @@ Au ? </Text>
         </View>
       </View>
       <View style={styles.row}>
-          <FormButton title="Retour" onPress={() => { props.navigation.navigate("DiagnosticDetails") }} />
+          <FormButton title="Retour" onPress={() => { props.navigation.navigate("PatientDetails") }} />
           <FormButton title="Enregistrer" onPress={handleSubmit} />
 
         </View>

@@ -18,6 +18,7 @@ import RadioGroup from 'react-native-radio-buttons-group';
 import { connect } from "react-redux";
 import 'localstorage-polyfill';
 import FormInput from '../../Form/FormInput';
+import FormInput4 from '../../Form/FormInput4';
 import {LinearGradient} from 'expo-linear-gradient';
 
 
@@ -130,14 +131,14 @@ const HabitudesDeVie1 = (props) => {
                     {tabagisme == true && (
                         <View style={tailwind("items-center")}>
 
-                            <FormInput placeholder="Nombre de cigarettes/jour"
-                                type="number-pad"
+                            <FormInput4 placeholder="Nombre de cigarettes/jour"
+                                type="number-pad" min="0" max="100"
                                 onChangeText={handleNbCigarettesChange}
                             />
 
 
-                            <FormInput placeholder="Frequence de Chicha/semaine"
-                                type="number-pad"
+                            <FormInput4 placeholder="Frequence de Chicha/semaine"
+                                type="number-pad" min="0" max="100"
                                 onChangeText={handleFreqChichaChange}
                             />
                         </View>

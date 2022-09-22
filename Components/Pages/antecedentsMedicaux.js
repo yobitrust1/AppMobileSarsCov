@@ -12,12 +12,14 @@ const AntecendentsMedicaux = (props) => {
 
 
   return (
-<LinearGradient colors={['#d7dbdd', '#abebc6','#d7dbdd']} style={styles.body}>
-    <ScrollView>
+    <LinearGradient style={styles.BigContainer} colors={['#d7dbdd', '#abebc6','#d7dbdd']} >
+    <View style={styles.ExtraSpaceUp}>
+    </View>
+    <View >
 
 
       <View style={tailwind(' items-center ')} >
-        <Text style={tailwind('text-gray-700 font-bold py-2 text-xl text-center')}>Antécédents medicaux:{props.patientList["generalInformation"]["nom"] + " " + props.patientList["generalInformation"]["prenom"]}</Text>
+        <Text style={styles.headerText}>Antécédents medicaux:{props.patientList["generalInformation"]["nom"] + " " + props.patientList["generalInformation"]["prenom"]}</Text>
         <View style={tailwind('py-24')}>
           <FormButton title="Ajouter un antécédent medical" onPress={() => { props.navigation.navigate("AddAntecendentsMedicaux") }} />
           <FormButton title="Liste des antécédents medicaux" onPress={() => props.navigation.navigate("AntecedentsList")} />
@@ -31,25 +33,89 @@ const AntecendentsMedicaux = (props) => {
 
 
       </View>
-    </ScrollView>
-    </LinearGradient>
+      </View>
+      <View style={styles.ExtraSpaceDown}>
+    </View>
+      </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  row: {
-    flex: 1,
-    flexDirection: "row",
-    padding: 10
+  BigContainer:{
+      flex:1,
+      backgroundColor:'#fff',
   },
-  body: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2193b0',
+  ExtraSpaceUp:{
+    flex:1,
+  },
+  BoxLayout:{
+    flex:3,
+    flexDirection:'row',
+    //justifyContent:'center',
+    alignContent:'center',
+    backgroundColor:'#fff',
+    //width:'95%',
+    borderRadius:15,
+    marginRight:'4%',
+    marginLeft:'4%',
+  },
+  ExtraSpaceDown:{
+    flex:1,
+  },
+  LeftBox:{
+    flex:1,
+    
+    backgroundColor:'#fff',
+    marginRight:'2.5%',
+    marginLeft:'10%',
+    marginVertical:'5%',
+},
+  RightBox:{
+    flex:1,
+    backgroundColor:'#fff',
+    marginLeft:'2.5%',
+    marginRight:'7%',
+    marginVertical:'5%',
+  },
+  LeftBox1:{
+    flex:1,
+    backgroundColor:'#fff',
+    marginBottom:'15%',
+    borderRadius:15,
+    elevation:10,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  LeftBox2:{
+    flex:1,
+    backgroundColor:'#fff',
+    borderRadius:15,
+    elevation:10,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  RightBox1:{
+    flex:3,
+    backgroundColor:'#fff',
+    marginBottom:'15%',
+    borderRadius:15,
+    elevation:10,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  RightBox2:{
+    flex:1,
+    backgroundColor:'#fff',
+    borderRadius:15,
+    elevation:10,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  title:{
+    fontSize:18,
+    color:"#696969"
   },
 });
-
 const mapStateToProps = (state) => ({
 
   patientList: state.medicalService.patientList,

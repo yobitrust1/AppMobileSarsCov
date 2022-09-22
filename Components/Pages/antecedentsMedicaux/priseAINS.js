@@ -1,4 +1,4 @@
-import { 
+import { Button,
   View, 
   Text, 
   TextInput,
@@ -15,7 +15,7 @@ import FormInput from "../../Form/FormInput";
 import FormButton from "../../Form/FormButton";
 import * as actions from "../../../Actions/medicalService";
 import { connect } from "react-redux";
-import DatePicker from 'react-native-datepicker'
+import DateTimePicker from '@react-native-community/datetimepicker';
 import {LinearGradient} from 'expo-linear-gradient';
 //import 'localstorage-polyfill';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -27,7 +27,8 @@ const PriseAINS1 = (props) => {
   const [dose, setDose] = useState(0.0)
   const [duree, setDuree] = useState(0)
   const [molecule, setMolecule] = useState("")
-  const [date, setDate] = useState()
+  const [date, setDate] = useState(new Date())
+  const [datePicker, setDatePicker] = useState(false);
 
   var handleDoseChange = (text) => {
     setDose(text)
@@ -50,9 +51,15 @@ const PriseAINS1 = (props) => {
     e.preventDefault();
     console.log(values)
     props.antecedentsMedicaux(props.patientList["cin"], values)
-    props.navigation.navigate("AddAntecendentsMedicaux1")
+    props.navigation.navigate("AddAntecendentsMedicaux")
   }
-
+  function showDatePicker() {
+    setDatePicker(true);
+  };
+  function onDateSelected(event, value) {
+    setDate(value);
+    setDatePicker(false);
+  };
 
 
 
@@ -76,29 +83,29 @@ const PriseAINS1 = (props) => {
         <FormInput placeholder="Dose " type="decimal-pad" onChangeText={handleDoseChange} />
         <FormInput placeholder="Molecule" onChangeText={handleMoleculeChange} />
         <FormInput placeholder="Duree" type="number-pad" onChangeText={handleDureeChange} />
-        <DatePicker
-          style={tailwind("rounded-md text-red-500 border-solid w-3/5 border border-teal-500 ")}
-          mode="date"
-          placeholder={(date !== undefined && date) || "Date de prise"}
-          format="YYYY-MM-DD"
-          minDate="1920-05-01"
-          maxDate={new Date()}
-          confirmBtnText="Confirm"
-          cancelBtnText="Cancel"
-          customStyles={{
-            dateIcon: {
-              left: 0,
-              top: 0,
-              marginLeft: 0
-            },
-            dateInput: {
-              marginLeft: 0,
-              borderWidth: 0
-            }
+        <View style={styles.row}>
 
-          }}
-          onDateChange={(date) => { setDate(date) }}
-        />
+        <Text style={tailwind('text-gray-700 py-2')}>
+        Date de prise ? </Text>
+      {datePicker && (
+          <DateTimePicker
+            value={date}
+            mode={'date'}
+            minimumDate={new Date(1950, 0, 1)}
+            maximumDate={new Date()}
+            display={Platform.OS === 'ios' ? 'spinner' : 'default'}
+            is24Hour={true}
+            onChange={onDateSelected}
+            style={styles.datePicker}
+          />
+        )}
+        {!datePicker && (
+          <View >
+            <Button title={(date !== undefined && date.toDateString()) || "Show Date Picker"} color="green" onPress={showDatePicker} />
+          </View>
+          
+        )}
+      </View>
 
 
 

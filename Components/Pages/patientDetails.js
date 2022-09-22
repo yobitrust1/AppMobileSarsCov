@@ -18,7 +18,7 @@ export default class Home extends Component {
     super(props);
     this.state = {
       data: [
-        {id:1, title: "Informations",title1: "générales",title2: "Home", image:"https://img.icons8.com/nolan/64/services.png"},
+        {id:1, title: "Informations",title1: "générales",title2: "InfosGenerales", image:"https://img.icons8.com/nolan/64/services.png"},
         {id:2, title: "Habitudes",title1: "de vie",title2:"HabitudesDeVie", image:"https://img.icons8.com/nolan/64/external-link.png"} ,
         {id:3, title: "Antécédents",title1: "médicaux",title2:"AntecendentsMedicaux", image:"https://img.icons8.com/nolan/50/share-2.png"} ,
         {id:4, title: "Expositions",title1: "a risque",title2:"Exposition", image:"https://img.icons8.com/nolan/64/synchronize.png"} ,
@@ -36,7 +36,7 @@ export default class Home extends Component {
     return (<View style={styles.container}><ScrollView>
       <WavyHeader customStyles={styles.svgCurve} />
       <View style={styles.headerContainer}>
-        <Text style={styles.headerText}>Custom Header</Text>
+        <Text style={styles.headerText}>Home</Text>
       </View>
       <View style={styles.container1}>
         

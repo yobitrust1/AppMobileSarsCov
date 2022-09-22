@@ -22,7 +22,7 @@ import RadioGroup from 'react-native-radio-buttons-group';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import FormCheckBox from "../../Form/CheckBox";
 import {LinearGradient} from 'expo-linear-gradient';
-
+import FormInput4 from '../../Form/FormInput4';
 
 
 
@@ -179,7 +179,7 @@ const ExamenRadioParaCli1 = (props) => {
             style={tailwind('')}
             onPress={handleResultChange}
           />
-          <FormInput placeholder="Nb de quadrants atteints" type="number-pad" onChangeText={setNbQua} />
+          <FormInput4 placeholder="Nb de quadrants atteints" type="number-pad" min="0" max="100" onChangeText={setNbQua} />
         </View>
       }
       {
@@ -221,7 +221,7 @@ const ExamenRadioParaCli1 = (props) => {
 
           </View>
           <View style={tailwind("items-center")}>
-            <FormInput placeholder="Espace Qt" type="decimal-pad" onChangeText={setEspaceQT} />
+            <FormInput4 placeholder="Espace Qt" type="decimal-pad" min="0" max="100" onChangeText={setEspaceQT} />
 
           </View>
 

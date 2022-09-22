@@ -22,7 +22,7 @@ import {LinearGradient} from 'expo-linear-gradient';
 const AddAntecendentsMedicaux1 = (props) => {
   const { colors } = useTheme();
 
-  const [nextPath, setNextPath] = useState("PathRespChronique")
+  const [nextPath, setNextPath] = useState("PathRespChronique1")
 
   var handleAntecedentChange = (data) => {
     if (data[0].selected) {
@@ -158,7 +158,7 @@ const AddAntecendentsMedicaux1 = (props) => {
 
 
         <View style={styles.row}>
-          <FormButton title="Retour1" onPress={() => { props.navigation.navigate("Exposition1") }} />
+          <FormButton title="Retour" onPress={() => { props.navigation.navigate("Exposition1") }} />
           <FormButton title="Suivant" onPress={() => { props.navigation.navigate(nextPath) }} />
         </View>
         <FormButton title="Pass" onPress={() => { props.navigation.navigate("HabitudesDeVie1") }} />

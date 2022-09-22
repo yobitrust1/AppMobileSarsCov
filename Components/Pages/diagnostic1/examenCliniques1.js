@@ -21,7 +21,7 @@ import { connect } from "react-redux";
 import 'localstorage-polyfill';
 import { ScrollView } from 'react-native-gesture-handler';
 import RadioGroup from 'react-native-radio-buttons-group';
-
+import FormInput4 from '../../Form/FormInput4';
 
 
 const ExamenCliniques1 = (props) => {
@@ -198,14 +198,14 @@ const ExamenCliniques1 = (props) => {
 
             <View style={tailwind("items-center")}>
                 <Text style={tailwind('text-red-500 py-2')}>{validation}</Text>
-                <FormInput placeholder="Température en °C" type="decimal-pad" onChangeText={setTemperature} />
-                <FormInput placeholder="FR  C/min" type="decimal-pad" onChangeText={setFr} />
-                <FormInput placeholder="FC bpm" type="decimal-pad" onChangeText={setFc} />
-                <FormInput placeholder="SaO2 %" type="decimal-pad" onChangeText={setSao2} />
+                <FormInput4 placeholder="Température en °C" type="decimal-pad" min="0" max="100" onChangeText={setTemperature} />
+                <FormInput4 placeholder="FR  C/min" type="decimal-pad" min="0" max="100" onChangeText={setFr} />
+                <FormInput4 placeholder="FC bpm" type="decimal-pad" min="0" max="100" onChangeText={setFc} />
+                <FormInput4 placeholder="SaO2 %" type="decimal-pad" min="0" max="100" onChangeText={setSao2} />
                 <FormInput2 placeholder1="PA systolique" placeholder2="PA diastolique" onChangeText1={setPa_sys} onChangeText2={setPa_dya} />
-                <FormInput placeholder="Score de Glasgow -/" type="decimal-pad" onChangeText={setScoreGlas} />
-                <FormInput placeholder="Poids kg" type="decimal-pad" maxLength={Number("3")} onChangeText={setPoids} />
-                <FormInput placeholder="Taille m" type="number-pad" onChangeText={setTaille}  maxLength={Number("3")}/>
+                <FormInput4 placeholder="Score de Glasgow -/" type="decimal-pad" min="0" max="100" onChangeText={setScoreGlas} />
+                <FormInput4 placeholder="Poids kg" type="decimal-pad" min="0" max="100" maxLength={Number("3")} onChangeText={setPoids} />
+                <FormInput4 placeholder="Taille m" type="number-pad" min="0" max="100" onChangeText={setTaille}  maxLength={Number("3")}/>
             </View>
             <View style={tailwind("px-8 py-2 ")}>
                 <TouchableOpacity onPress={() => setOro(!oro)}>

@@ -66,7 +66,7 @@ const AVC1 = (props) => {
     e.preventDefault();
     console.log(values)
     props.antecedentsMedicaux(props.patientList["cin"], values)
-    props.navigation.navigate("AddAntecendentsMedicaux1")
+    props.navigation.navigate("AddAntecendentsMedicaux")
   }
 
 

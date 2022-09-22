@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet,Text, View, Image } from 'react-native';
+import { TouchableOpacity,StyleSheet,Text, View, Image } from 'react-native';
 import {Provider as PaperProvider} from 'react-native-paper';
 import {IconButton,Colors} from 'react-native-paper';
 import FormButton from "../Form/FormButton";
@@ -39,8 +39,10 @@ const Home = (props) => {
     <View style={styles.RightBox1}>
       <IconButton icon="mail" color={Colors.red500} size={50} onPress={() => props.navigation.navigate("SearchPatient")}></IconButton>
       <Text style={styles.title}>Rechercher un patient</Text></View>
-    <View style={styles.RightBox2}>
-      <Text style={styles.title} onClick={{logout}}>Deconnexion</Text>
+    <View style={styles.RightBox2} onClick={logout}>
+    <TouchableOpacity onPress={() => { logout() }}>
+      <Text style={styles.title} onClick={logout}>Deconnexion</Text>
+      </TouchableOpacity>
     </View>
     </View>
     </View>

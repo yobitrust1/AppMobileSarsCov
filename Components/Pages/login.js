@@ -93,8 +93,8 @@ const Login = (props) => {
         <SvgTop/>
       </View>
       <View style={styles.container}>
-        <Text style={styles.titulo}>Bienvenue a Plate-forme VRR-Sousse et autre maladie infectieuse</Text>
-        <Text style={styles.subTitle}>Sign In to your account</Text>
+        <Text style={styles.titulo}>Plate-forme Sars-Cov2 et autre maladie infectieuse</Text>
+        <Text style={styles.subTitle}>Connectez-vous à votre compte</Text>
         <TextInput 
           placeholder="jhon@email.com"
           style={styles.textInput}
@@ -107,13 +107,13 @@ const Login = (props) => {
           onChangeText={handlePasswordChange}
           isPassword='true'
         />
-        <Text style={styles.forgotPassword}>Forgot your password?</Text>
+        <Text style={styles.forgotPassword}></Text>
         <Text style={tailwind('text-red-500')}>
           {typeof (props.loggedUser) === 'string' && props.loggedUser}
 
         </Text>
         <ButtonGradient onPress={handleSubmit}/>
-        <Text style={styles.forgotPassword}>Don't have an account?</Text>
+        <Text style={styles.forgotPassword}></Text>
         <StatusBar style="auto" />
       </View>
     </View>
