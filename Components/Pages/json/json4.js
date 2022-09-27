@@ -57,7 +57,7 @@ const Json2 = (props) => {
                       <View >
               <Text style={styles.name1}>{setNom}</Text>
                 
-              {Object.keys(test[setNom]).map((key, i)=> (
+              {test[setNom]!=null&&Object.keys(test[setNom]).map((key, i)=> (
                     
                     <View style={styles.card} >
             <Text style={styles.name}>{key}</Text>
@@ -98,7 +98,7 @@ const Json2 = (props) => {
     headerText: {
       fontSize: 30,
       fontWeight: 'bold',
-      color: '#333',
+      color: '#f7faf9',
       textAlign: 'center',
       marginTop: 35
     },

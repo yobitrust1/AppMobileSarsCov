@@ -30,8 +30,8 @@ import FormInput4 from '../../Form/FormInput4';
 const ExamenRadioParaCli1 = (props) => {
   const { colors } = useTheme();
   const [datePicker, setDatePicker] = useState(false);
-  const [type, setType] = useState("Thorax")
-  const [datePr, setDatePr] = useState(new Date());
+  const [type, setType] = useState(localStorage.getItem("type"))
+  const [datePr, setDatePr] = useState(localStorage.getItem("datepr"));
   const [result, setResult] = useState("Normale")
   const [espaceQT, setEspaceQT] = useState()
   const [aspect, setAspect] = useState()
@@ -83,7 +83,7 @@ const ExamenRadioParaCli1 = (props) => {
     e.preventDefault()
     var values = {
       type: type,
-      datepr: datePr,
+      datePr: datePr,
       result: result,
       espaceQT: espaceQT,
       aspect: aspect,
@@ -110,52 +110,10 @@ const ExamenRadioParaCli1 = (props) => {
                 backgroundColor: colors.background
             }]}
         >
-      <Text style={tailwind("pt-8 text-center pb-2 text-gray-700")}>Ajouter un examen?</Text>
-      <RadioGroup radioButtons={[
-        {
-          label: 'Radio Thorax',
-          color: '#51d1c5',
-
-        },
-        {
-          label: 'TDM thoracique',
-          color: '#51d1c5',
-        },
-        {
-          label: 'ECG',
-          color: '#51d1c5',
-        },
-      ]}
-        //flexDirection='row'
-        style={tailwind('')}
-        onPress={handleTypeChange}
-      />
+      
 
       <View style={tailwind("items-center")}>
-      <View style={styles.row}>
-
-<Text style={tailwind('text-gray-700 py-2')}>
-  Date de prise </Text>
-{datePicker && (
-  <DateTimePicker
-    value={datePr}
-    mode={'date'}
-    minimumDate={new Date(1950, 0, 1)}
-    maximumDate={new Date()}
-    display={Platform.OS === 'ios' ? 'spinner' : 'default'}
-    is24Hour={true}
-    onChange={onDateSelected}
-    style={styles.datePicker}
-  />
-)}
-{!datePicker && (
-  <View >
-    <Button title={(datePr !== undefined && datePr.toDateString()) || "Show Date Picker"} color="green" onPress={showDatePicker} />
-  </View>
-  
-)}
-</View>
-
+    
       </View>
       {
         type === "Thorax" && <View style={tailwind("items-center py-2")}>

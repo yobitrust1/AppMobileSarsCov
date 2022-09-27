@@ -176,17 +176,22 @@ export const medicalService = (state = initialState, action) => {
     case ACTION_TYPES.SEARCH_DIAGNOSTIC:
       return{
         ...state,
-        diagnosticList:action.payload
+        patientList:action.payload
       }
     case ACTION_TYPES.ADD_CONF_DIAG:
       return {
         ...state,
-        diagnosticList:action.payload
+        patientList:action.payload
+      }
+      case ACTION_TYPES.ADD_EXAM_BIO:
+      return {
+        ...state,
+        patientList:action.payload
       }
     case ACTION_TYPES.ADD_ADMISSION:
       return {
         ...state,
-        diagnosticList:action.payload
+        patientList:action.payload
       }
     case ACTION_TYPES.ADD_CARAC_CLINIQUES:
       return {
@@ -196,13 +201,13 @@ export const medicalService = (state = initialState, action) => {
     case ACTION_TYPES.ADD_EXAM_RADIO_PARA_CLI:
       return{
         ...state,
-        diagnosticList:action.payload
+        patientList:action.payload
       }
 
     case ACTION_TYPES.ADD_EVALUATION_FINALE:
       return{
         ...state,
-        diagnosticList:action.payload
+        patientList:action.payload
       }
       case ACTION_TYPES.GET_TRAITMENT:
         return{

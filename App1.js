@@ -60,6 +60,15 @@ import DiagnosticDetails from "./Components/Pages/diagnosticDetails";
 import Exposition from "./Components/Pages/diagnostic/exposition";
 import Exposition1 from "./Components/Pages/diagnostic1/exposition1";
 import ConfirmationDiag from "./Components/Pages/diagnostic/confirmationDiag";
+import confirmationDiagList from "./Components/Pages/diagnostic/confirmationDiagList";
+import confirmationDiagOpen from "./Components/Pages/diagnostic/confirmationDiagOpen";
+import confirmationDiagModif from "./Components/Pages/diagnostic/confirmationDiagModif";
+import examenRadioParaCliList from "./Components/Pages/diagnostic/examenRadioParaCliList";
+import examenRadioParaCliOpen from "./Components/Pages/diagnostic/examenRadioParaCliOpen";
+import examenRadioParaCliModif from "./Components/Pages/diagnostic/examenRadioParaCliModif";
+import examBioList from "./Components/Pages/diagnostic/examBioList";
+import examBioModif from "./Components/Pages/diagnostic/examBioModif";
+import examBioOpen from "./Components/Pages/diagnostic/examBioOpen";
 import Admission from "./Components/Pages/diagnostic/admission";
 import CaracCliniques from "./Components/Pages/diagnostic/CaracCliniques";
 import ExamenCliniques from "./Components/Pages/diagnostic/examenCliniques";
@@ -166,6 +175,20 @@ const App1 = () => {
           <Stack.Screen name="Exposition" component={Exposition} />
           <Stack.Screen name="Exposition1" component={Exposition1} />
           <Stack.Screen name="ConfirmationDiag" component={ConfirmationDiag} />
+
+          
+          <Stack.Screen name="confirmationDiagList" component={confirmationDiagList} />
+          <Stack.Screen name="confirmationDiagOpen" component={confirmationDiagOpen} />
+          <Stack.Screen name="confirmationDiagModif" component={confirmationDiagModif} />
+          <Stack.Screen name="examBioList" component={examBioList} />
+          <Stack.Screen name="examBioModif" component={examBioModif} />
+          <Stack.Screen name="examBioOpen" component={examBioOpen} />
+          <Stack.Screen name="examenRadioParaCliList" component={examenRadioParaCliList} />
+          <Stack.Screen name="examenRadioParaCliModif" component={examenRadioParaCliModif} />
+          <Stack.Screen name="examenRadioParaCliOpen" component={examenRadioParaCliOpen} />
+
+
+
           <Stack.Screen name="Admission" component={Admission} />
           <Stack.Screen name="CaracCliniques" component={CaracCliniques} />
           <Stack.Screen name="ExamenCliniques" component={ExamenCliniques} />

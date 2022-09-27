@@ -24,10 +24,10 @@ import {LinearGradient} from 'expo-linear-gradient';
 const ConfirmationDiag1 = (props) => {
   
   const { colors } = useTheme();
-  const [test, setTest] = useState("Pcr")
-  const [datePr, setDatePr] = useState(new Date())
-  const [type, setType] = useState("Nasopharyngé")
-  const [resultat, setResultat] = useState("Positif")
+  const [test, setTest] = useState(localStorage.getItem("type"))
+  const [datePr, setDatePr] = useState(localStorage.getItem("datePr"))
+  const [type, setType] = useState("")
+  const [resultat, setResultat] = useState("")
   const [datePicker, setDatePicker] = useState(false);
   var handleSubmit = (e) => {
     e.preventDefault();
@@ -107,55 +107,12 @@ const ConfirmationDiag1 = (props) => {
 
 
 
-      <Text style={tailwind(" text-gray-700 text-center pt-8 pb-2")}>Type de confirmation ?</Text>
-      <RadioGroup radioButtons={[
-        {
-          label: 'PCR',
-          color: '#51d1c5',
-
-        },
-        {
-          label: 'Test rapide AC',
-          color: '#51d1c5',
-        },
-        {
-          label: 'Test rapide AG',
-          color: '#51d1c5',
-        },
-        {
-          label: 'Sérologie',
-          color: '#51d1c5',
-        },
-
-      ]}
-        //flexDirection='row'
-        style={tailwind('')}
-        onPress={handleTestChange}
-      />
+      
 
       {test === "Pcr" && <View style={tailwind("items-center py-6")}>
       <View style={styles.row}>
 
-<Text style={tailwind('text-gray-700 py-2')}>
-  Date de prise ? </Text>
-{datePicker && (
-  <DateTimePicker
-    value={datePr}
-    mode={'date'}
-    minimumDate={new Date(1950, 0, 1)}
-    maximumDate={new Date()}
-    display={Platform.OS === 'ios' ? 'spinner' : 'default'}
-    is24Hour={true}
-    onChange={onDateSelected}
-    style={styles.datePicker}
-  />
-)}
-{!datePicker && (
-  <View >
-    <Button title={(datePr !== undefined && datePr.toDateString()) || "Show Date Picker"} color="green" onPress={showDatePicker} />
-  </View>
-  
-)}
+
 </View>
      
         <Text style={tailwind(" text-gray-700 text-center pt-8 pb-2")}>Type ?</Text>

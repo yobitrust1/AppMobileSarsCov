@@ -98,7 +98,7 @@ const Json2 = (props) => {
     headerText: {
       fontSize: 30,
       fontWeight: 'bold',
-      color: '#333',
+      color: '#f7faf9',
       textAlign: 'center',
       marginTop: 35
     },
