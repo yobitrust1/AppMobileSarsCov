@@ -36,15 +36,16 @@ const AntecedentsList = (props) => {
 <LinearGradient style={styles.BigContainer} colors={['#d7dbdd', '#abebc6','#d7dbdd']} >
 
     <ScrollView>
-      <View style={styles.card}>
-           
-      <View style={tailwind(' items-center ')} >
+      <View style={styles.card }>
+      <View style={styles.card1 }> 
+       </View>
+      <View style={styles.card1 } >
        <View><Text style={tailwind('text-gray-700 font-bold py-2 text-xl text-center')}>Examen biologique:
-       </Text><ScrollView>
+       </Text>
         <View>
           
     {test!=null&& Object.keys(test).map((setNom, key) => (<View> 
-      <Text>{setNom}</Text>
+      <Text style={tailwind('text-center')}>{setNom}</Text>
     <View >
       {test[setNom]!=null&& Object.keys(test[setNom]).map((key1, key2) => (<View> 
        
@@ -53,12 +54,12 @@ const AntecedentsList = (props) => {
         <View>{key1=="gbs" &&test[setNom][key1]!=null&& 
           <View>{Object.keys(test[setNom][key1]).map((key2, key3) => (
           <View> 
-            <View><Text >{test[setNom][key1][key2]["datePr"]}</Text></View>   
+            <View><Text style={tailwind('text-center')}>{test[setNom][key1][key2]["datePr"]}</Text></View>   
             <TouchableOpacity onPress={() => handleModifier("NFS",test[setNom][key1][key2]["datePr"])}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Modifier ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Modifier ?</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { handleRemove("NFS",test[setNom][key1][key2]["datePr"]) }}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Supprimer ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Supprimer ?</Text></View>
             </TouchableOpacity>
           </View>))}
         </View>   
@@ -66,12 +67,12 @@ const AntecedentsList = (props) => {
       <View>{key1=="creats" &&test[setNom][key1]!=null&& 
           <View>{Object.keys(test[setNom][key1]).map((key2, key3) => (
           <View> 
-            <View><Text >{test[setNom][key1][key2]["datePr"]}</Text></View>   
+            <View><Text style={tailwind('text-center')}>{test[setNom][key1][key2]["datePr"]}</Text></View>   
             <TouchableOpacity onPress={() => handleModifier("BilanRenal",test[setNom][key1][key2]["datePr"])}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Modifier ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Modifier ?</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { handleRemove("BilanRenal",test[setNom][key1][key2]["datePr"]) }}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Supprimer ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Supprimer ?</Text></View>
             </TouchableOpacity>
           </View>))}
         </View>  
@@ -79,12 +80,12 @@ const AntecedentsList = (props) => {
       <View>{key1=="bilirus" &&test[setNom][key1]!=null&& 
           <View>{Object.keys(test[setNom][key1]).map((key2, key3) => (
           <View> 
-            <View><Text >{test[setNom][key1][key2]["datePr"]}</Text></View>   
+            <View><Text style={tailwind('text-center')}>{test[setNom][key1][key2]["datePr"]}</Text></View>   
             <TouchableOpacity onPress={() => handleModifier("BilanHepa",test[setNom][key1][key2]["datePr"])}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Modifier ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Modifier ?</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { handleRemove("BilanHepa",test[setNom][key1][key2]["datePr"]) }}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Supprimer ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Supprimer ?</Text></View>
             </TouchableOpacity>
           </View>))}
         </View>  
@@ -92,12 +93,12 @@ const AntecedentsList = (props) => {
         <View>{key1=="phs" &&test[setNom][key1]!=null&& 
           <View>{Object.keys(test[setNom][key1]).map((key2, key3) => (
           <View> 
-            <View><Text >{test[setNom][key1][key2]["datePr"]}</Text></View>   
+            <View><Text style={tailwind('text-center')}>{test[setNom][key1][key2]["datePr"]}</Text></View>   
             <TouchableOpacity onPress={() => handleModifier("GDSA",test[setNom][key1][key2]["datePr"])}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Modifier ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Modifier ?</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { handleRemove("GDSA",test[setNom][key1][key2]["datePr"]) }}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Supprimer ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Supprimer ?</Text></View>
             </TouchableOpacity>
           </View>))}
         </View>  
@@ -105,12 +106,12 @@ const AntecedentsList = (props) => {
       <View>{key1=="naks" &&test[setNom][key1]!=null&& 
           <View>{Object.keys(test[setNom][key1]).map((key2, key3) => (
           <View> 
-            <View><Text >{test[setNom][key1][key2]["datePr"]}</Text></View>   
+            <View><Text style={tailwind('text-center')}>{test[setNom][key1][key2]["datePr"]}</Text></View>   
             <TouchableOpacity onPress={() => handleModifier("Ionogra",test[setNom][key1][key2]["datePr"])}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Modifier ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Modifier ?</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { handleRemove("Ionogra",test[setNom][key1][key2]["datePr"]) }}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Supprimer ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Supprimer ?</Text></View>
             </TouchableOpacity>
           </View>))}
         </View>  
@@ -118,12 +119,12 @@ const AntecedentsList = (props) => {
       <View>{key1=="pathss" &&test[setNom][key1]!=null&& 
           <View>{Object.keys(test[setNom][key1]).map((key2, key3) => (
           <View> 
-            <View><Text >{test[setNom][key1][key2]["datePr"]}</Text></View>   
+            <View><Text style={tailwind('text-center')}>{test[setNom][key1][key2]["datePr"]}</Text></View>   
             <TouchableOpacity onPress={() => handleModifier("AutreBilan",test[setNom][key1][key2]["datePr"])}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Modifier ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Modifier ?</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { handleRemove("AutreBilan",test[setNom][key1][key2]["datePr"]) }}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Supprimer ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Supprimer ?</Text></View>
             </TouchableOpacity>
           </View>))}
         </View>  
@@ -143,7 +144,6 @@ const AntecedentsList = (props) => {
           <FormButton title="Retour" onPress={() => props.navigation.navigate("DiagnosticDetails")} />
 
         </View>
-        </ScrollView>
 
         </View>
       </View>
@@ -229,6 +229,7 @@ const styles = StyleSheet.create({
     color:"#696969"
   },
   card:{
+    justifyContent:'center',
     shadowColor: '#00000021',
     shadowOffset: {
       width: 0,
@@ -245,6 +246,11 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection:'row',
     borderRadius:30,
+    alignItems: 'center'
+
+  },
+  card1:{marginRight: 100,
+    justifyContent: 'center', alignItems: 'center',
   },
 });
 const mapStateToProps = (state) => ({

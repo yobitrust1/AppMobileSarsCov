@@ -142,14 +142,7 @@ const ExamenCliniques1 = (props) => {
     var handleSubmit = () => {
 
 
-        if (temperature > 43 || temperature < 30 || temperature === undefined) { setValidation("La temperature doit etre comprise entre 30et 43 °C"); return; }
-        if (fr > 250 || fr < 0 || fr === undefined) { setValidation("La valuer du FR doit etre comprise entre 0 et 250 C/min !"); return }
-        if (fc > 150 || fc < 0 || fc == undefined) { setValidation("La valeur du FC doit etre comprise entre 0 et 150 bpm"); return }
-        if (sao2 > 100 || sao2 < 0 || sao2 === undefined) { setValidation("Le pourcentage de SaO2  doit etre compris entre 0 % et 100 % !"); return }
-        if (pa_sys > 200 || pa_sys < 80 || pa_sys === undefined) { setValidation("La pression arterielle systolique doit ete comprise entre 80 et 200 !"); return }
-        if (pa_dya > 200 || pa_dya < 80 || pa_dya === undefined) { setValidation("La pression arterielle systolique doit ete comprise entre 40 et 150!"); return }
-        if (scoreGlas > 15 || scoreGlas < 0 || scoreGlas === undefined) { setValidation("Le score de Glasgow doit etre entre 0 et 15 !") }
-
+      
 
         var x = examOro.replace("Autre", "Autre:" + autreInputOro)
 

@@ -61,7 +61,9 @@ const AntecedentsList = (props) => {
 
   return (
 <LinearGradient style={styles.BigContainer} colors={['#d7dbdd', '#abebc6','#d7dbdd']} >
-    <View style={styles.ExtraSpaceUp}>
+<ScrollView>
+      <View style={styles.card}>
+        <View style={styles.ExtraSpaceUp}>
     </View>
     <View >
       <View style={tailwind(' items-center ')} >
@@ -104,7 +106,9 @@ const AntecedentsList = (props) => {
       </View>
       <View style={styles.ExtraSpaceDown}>
     </View>
-      </LinearGradient>
+    </View>
+    </ScrollView>
+     </LinearGradient>
   );
 };
 const styles = StyleSheet.create({
@@ -181,6 +185,24 @@ const styles = StyleSheet.create({
   title:{
     fontSize:18,
     color:"#696969"
+  },
+  card:{
+    shadowColor: '#00000021',
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49,
+    elevation: 12,
+
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop:70,
+    backgroundColor:"white",
+    padding: 10,
+    flexDirection:'row',
+    borderRadius:30,
   },
 });
 const mapStateToProps = (state) => ({

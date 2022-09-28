@@ -57,9 +57,7 @@ const CaracCliniques1 = (props) => {
     const [test, setTest] = useState(false)
 
     var handleTemperatureChange = (text) => {
-        if (text < 32 || text > 43)
-            setTest(false)
-        else setTest(true)
+       
         setTemperature(text)
     }
     var handletypeT = (data) => {
@@ -152,7 +150,7 @@ const CaracCliniques1 = (props) => {
                     </TouchableOpacity>
                     {
                         fievre == true && <View style={tailwind("items-center")}>
-                            <Text style={tailwind("text-red-500")}>{test == false && "La temperature doit etre entre 36 et 43 °C"}</Text>
+                            
                             <FormInput4 placeholder="Si mesuré" type="decimal-pad" min="0" max="100" onChangeText={handleTemperatureChange} />
                             <CaracCls dateD={dateD} dateF={dateF} setDateD={setDateD} setDateF={setDateF} onSubmit={() => { handleSubmitCarac("Fievre"); setFievre(!fievre) }} />
                         </View>

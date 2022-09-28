@@ -37,13 +37,15 @@ const AntecedentsList = (props) => {
     
     <ScrollView>
       <View style={styles.card}>
-      <View style={tailwind(' items-center ')} >
+      <View style={styles.card1 }> 
+       </View>
+      <View style={styles.card1 } >
        <View><Text style={tailwind('text-gray-700 font-bold py-2 text-xl text-center')}>Examen biologique:
        </Text><ScrollView>
         <View>
           
     {test!=null&& Object.keys(test).map((setNom, key) => (<View> 
-      <Text>{setNom}</Text>
+      <Text style={tailwind('text-center')}>{setNom}</Text>
     <View >
        
 
@@ -51,12 +53,12 @@ const AntecedentsList = (props) => {
         <View>{setNom=="thoraxes" &&test[setNom]!=null&& 
           <View>{Object.keys(test[setNom]).map((key, key1) => (
           <View> 
-            <View><Text >{test[setNom][key]["datepr"]}ss</Text></View>   
+            <View><Text style={tailwind('text-center')}>{test[setNom][key]["datepr"]}ss</Text></View>   
             <TouchableOpacity onPress={() => handleModifier("Thorax",test[setNom][key]["datepr"])}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Modifier ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Modifier ?</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { handleRemove("Thorax",test[setNom][key]["datepr"]) }}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Supprimer ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Supprimer ?</Text></View>
             </TouchableOpacity>
           </View>))}
         </View>   
@@ -64,12 +66,12 @@ const AntecedentsList = (props) => {
     <View>{setNom=="tdmThos" &&test[setNom]!=null&& 
           <View>{Object.keys(test[setNom]).map((key, key1) => (
           <View> 
-            <View><Text >{test[setNom][key]["datepr"]}ss</Text></View>   
+            <View><Text style={tailwind('text-center')}>{test[setNom][key]["datepr"]}ss</Text></View>   
             <TouchableOpacity onPress={() => handleModifier("TdmTho",test[setNom][key]["datepr"])}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Modifier ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Modifier ?</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { handleRemove("TdmTho",test[setNom][key]["datepr"]) }}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Supprimer ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Supprimer ?</Text></View>
             </TouchableOpacity>
           </View>))}
         </View>   
@@ -77,12 +79,12 @@ const AntecedentsList = (props) => {
       <View>{setNom=="ecgs" &&test[setNom]!=null&& 
           <View>{Object.keys(test[setNom]).map((key, key1) => (
           <View> 
-            <View><Text >{test[setNom][key]["datepr"]}ss</Text></View>   
+            <View><Text style={tailwind('text-center')}>{test[setNom][key]["datepr"]}ss</Text></View>   
             <TouchableOpacity onPress={() => handleModifier("ECG",test[setNom][key]["datepr"])}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Modifier ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Modifier ?</Text></View>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { handleRemove("ECG",test[setNom][key]["datepr"]) }}>
-            <View><Text style={tailwind('text-teal-200 px-8')}>Supprimer ?</Text></View>
+            <View><Text style={tailwind('text-teal-600 text-center  px-8')}>Supprimer ?</Text></View>
             </TouchableOpacity>
           </View>))}
         </View>   
@@ -188,6 +190,9 @@ const styles = StyleSheet.create({
     fontSize:18,
     color:"#696969"
   },
+  card1:{marginRight: 100,
+    justifyContent: 'center', alignItems: 'center',
+  },
   card:{
     shadowColor: '#00000021',
     shadowOffset: {
@@ -200,7 +205,7 @@ const styles = StyleSheet.create({
 
     marginLeft: 10,
     marginRight: 10,
-    marginTop:70,
+    marginTop:130,
     backgroundColor:"white",
     padding: 10,
     flexDirection:'row',
