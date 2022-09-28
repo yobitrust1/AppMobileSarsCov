@@ -50,26 +50,33 @@ const Json2 = (props) => {
       <Text style={styles.headerText}>Confirmation diagnostique</Text>
       <View style={styles.headerContainer}>
         
-      </View>
-      <View style={styles.container1}>
-                  {test!=null&& Object.keys(test).map((setNom, key) => (
-                    
+        </View>
+        <View style={styles.container1}>
+                    {test!=null&&Object.keys(test).map((setNom, key) => (
+                      
+                        <View >
+                <Text style={styles.name1}>{setNom}</Text>
+                  
+                {test[setNom]!=null&&Object.keys(test[setNom]).map((key1, i)=> (
+                      
                       <View >
-              <Text style={styles.name1}>{setNom}</Text>
-                
-              {test[setNom]!=null&&Object.keys(test[setNom]).map((key, i)=> (
-                    
-                    <View style={styles.card} >
-            <Text style={styles.name}>{key}</Text>
-              <Text style={styles.count}>{String(test[setNom][key])}</Text>
-          </View>
-
-      ))
-}
+              <Text style={styles.name}>{key1}</Text>
+                {Object.keys(test[setNom][key1]).map((key2, i1)=> (
+                      <View style={styles.card} >
+              <Text style={styles.name}>{key2}</Text>
+                <Text style={styles.count}>{String(test[setNom][key1][key2])}</Text>
             </View>
-
+  
         ))
-}</View>
+  }
+            </View>
+  
+        ))
+  }
+              </View>
+  
+          ))
+  }</View>
 <FormButton title="Suivant" onPress={() => { props.navigation.navigate("Json5") }} />
 </ScrollView></View>
               
