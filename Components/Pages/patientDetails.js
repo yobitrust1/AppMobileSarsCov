@@ -23,6 +23,7 @@ export default class Home extends Component {
         {id:3, title: "Antécédents",title1: "médicaux",title2:"AntecendentsMedicaux", image:"https://img.icons8.com/nolan/50/share-2.png"} ,
         {id:4, title: "Expositions",title1: "a risque",title2:"Exposition", image:"https://img.icons8.com/nolan/64/synchronize.png"} ,
         {id:5, title: "Diagnostics",title1: "",title2:"DiagnosticDetails", image:"https://img.icons8.com/nolan/64/settings--v1.png"} ,
+        {id:6, title: "Retour",title1: "",title2:"SearchPatient", image:"https://img.icons8.com/nolan/64/undo.png"} ,
       ]
     };
   }
