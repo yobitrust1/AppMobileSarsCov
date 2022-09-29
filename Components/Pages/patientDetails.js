@@ -25,7 +25,7 @@ export default class Home extends Component {
         {id:5, title: "Diagnostics",title1: "",title2:"DiagnosticDetails", image:"https://img.icons8.com/nolan/64/settings--v1.png"} ,
         {id:6, title: "Retour",title1: "",title2:"SearchPatient", image:"https://img.icons8.com/nolan/64/undo.png"} ,
       ]
-    };
+  };
   }
 
   clickEventListener(item) {

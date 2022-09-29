@@ -68,8 +68,8 @@ const Login = (props) => {
           y2={364.215}
           gradientUnits="userSpaceOnUse"
         >
-          <Stop stopColor="#1954CB" />
-          <Stop offset={1} stopColor="#FF3CBD" />
+          <Stop stopColor="#009c5e" />
+          <Stop offset={1} stopColor="#00d4ff" />
         </LinearGradient>
         <LinearGradient
           id="prefix__paint1_linear_103:6"
@@ -79,8 +79,8 @@ const Login = (props) => {
           y2={422.041}
           gradientUnits="userSpaceOnUse"
         >
-          <Stop stopColor="#1954CB" />
-          <Stop offset={1} stopColor="#FF3CBD" />
+          <Stop stopColor="#009c5e" />
+          <Stop offset={1} stopColor="#00d4ff" />
         </LinearGradient>
       </Defs>
     </Svg>
